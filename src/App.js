@@ -118,7 +118,7 @@ function App() {
           <Grid item xs={4}/>
           <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Email</h5>
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Emailу</h5>
               {adressHole && adressErroros && (
                   <div style={{ color: "red" }}>{adressErroros}</div>
               )}
