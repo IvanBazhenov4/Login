@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import {Box, Grid, Paper, styled,Button} from "@mui/material";
+import {Box, Grid, Paper, styled, Button} from "@mui/material";
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -21,14 +21,18 @@ function App() {
   const [nameErroros, setNameErroros] = useState("Empty name!");
   const [adressErroros, setAdressErroros] = useState("Empty adress!");
   const [numberErroros, setNumberErroros] = useState("Empty number!");
+  const [checkBox, setCheckBox] = useState(true);
+  const handleChange = () => {
+    setCheckBox(!checkBox);
+  };
   const [formValid, setFormValid] = useState(false);
   useEffect(() => {
-    if (nameErroros || adressErroros || numberErroros) {
+    if (nameErroros || adressErroros || numberErroros||checkBox) {
       setFormValid(false);
     } else {
       setFormValid(true);
     }
-  }, [nameErroros, adressErroros, numberErroros]);
+  }, [nameErroros, adressErroros, numberErroros,checkBox]);
 
   const nameHandler = (e) => {
     setName(e.target.value);
@@ -79,9 +83,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={0}>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h2 style={{display: 'flex'}}>Регистрация</h2>
+            <Item style={{width: 360}}><h2 style={{display: 'flex'}}>Регистрация</h2>
               <h5 style={{display: 'flex'}}>
               Уже есть аккаунт?
               <a
@@ -94,10 +98,10 @@ function App() {
               </a>
             </h5></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h5 style={{display: 'flex'}}>Имя</h5>
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Имя</h5>
               {nameHole && nameErroros && (
                   <div style={{ color: "red" }}>{nameErroros}</div>
               )}
@@ -111,10 +115,10 @@ function App() {
                   placeholder="Введите ваше имя..."
               /></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h5 style={{display: 'flex'}}>Email</h5>
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Email</h5>
               {adressHole && adressErroros && (
                   <div style={{ color: "red" }}>{adressErroros}</div>
               )}
@@ -128,10 +132,10 @@ function App() {
                   placeholder="Введите ваш почтовый адресс..."
               /></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h5 style={{display: 'flex'}}>Номер телефона</h5>
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Номер телефона</h5>
               {numberHole && numberErroros && (
                   <div style={{ color: "red" }}>{numberErroros}</div>
               )}
@@ -145,10 +149,10 @@ function App() {
                   placeholder="Введите ваш номер телефона..."
               /></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h5 style={{display: 'flex'}}>Язык</h5>
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Язык</h5>
               <select style={{display: 'flex',width: 360}}>
                 <option value="value1">Русский</option>
                 <option value="value1">American</option>
@@ -156,11 +160,13 @@ function App() {
                 <option value="value1">中国人</option>
               </select></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><h5 style={{display: 'flex'}}><input type="checkbox" />
-
+            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>
+                <input
+                    onChange={handleChange}
+                type='checkbox'/>
                 Условия
                 <a
                     className="App-link"
@@ -173,14 +179,14 @@ function App() {
                 пользователя
               </h5></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
+          <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item><Button disabled={!formValid} type="submit">
+            <Item style={{width: 360}}><Button disabled={!formValid} type="submit">
               <h4 style={{display: 'flex',width: 360}}>Регистрация</h4>
             </Button></Item>
           </Grid>
-          <Grid item xs={4}></Grid>
+          <Grid item xs={4}/>
 
 
         </Grid>
