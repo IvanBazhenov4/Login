@@ -42,3 +42,9 @@
     transform: rotate(360deg);
   }
 }
+.item{
+  borderRight: "1px solid grey";
+  borderBottom: "1px solid grey";
+  borderLeft: "1px solid grey";
+  borderTop:"1px solid gold";
+}

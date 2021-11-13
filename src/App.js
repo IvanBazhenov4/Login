@@ -78,6 +78,7 @@ function App() {
         break;
     }
   };
+
   return (
     <div className="App">
         <img src={logo} className="App-logo" alt="logo" />
@@ -85,7 +86,7 @@ function App() {
         <Grid container spacing={0}>
           <Grid item xs={4}/>
           <Grid item xs={4}>
-            <Item style={{width: 360}}><h2 style={{display: 'flex'}}>Регистрация</h2>
+            <Item  style={{width: 360}} ><h2 style={{display: 'flex'}}>Регистрация</h2>
               <h5 style={{display: 'flex'}}>
               Уже есть аккаунт?
               <a
@@ -96,12 +97,8 @@ function App() {
               >
                 Войти
               </a>
-            </h5></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Имя</h5>
+            </h5>
+              <h5 style={{display: 'flex'}}>Имя</h5>
               {nameHole && nameErroros && (
                   <div style={{ color: "red" }}>{nameErroros}</div>
               )}
@@ -113,12 +110,8 @@ function App() {
                   name="name"
                   type="text"
                   placeholder="Введите ваше имя..."
-              /></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Emailу</h5>
+              />
+              <h5 style={{display: 'flex'}}>Emailу</h5>
               {adressHole && adressErroros && (
                   <div style={{ color: "red" }}>{adressErroros}</div>
               )}
@@ -130,12 +123,7 @@ function App() {
                   name="adress"
                   type="text"
                   placeholder="Введите ваш почтовый адресс..."
-              /></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Номер телефона</h5>
+              /><h5 style={{display: 'flex'}}>Номер телефона</h5>
               {numberHole && numberErroros && (
                   <div style={{ color: "red" }}>{numberErroros}</div>
               )}
@@ -147,23 +135,13 @@ function App() {
                   name="number"
                   type="text"
                   placeholder="Введите ваш номер телефона..."
-              /></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>Язык</h5>
+              /><h5 style={{display: 'flex'}}>Язык</h5>
               <select style={{display: 'flex',width: 360}}>
                 <option value="value1">Русский</option>
                 <option value="value1">American</option>
                 <option value="value1">Español</option>
                 <option value="value1">中国人</option>
-              </select></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><h5 style={{display: 'flex'}}>
+              </select><h5 style={{display: 'flex'}}>
                 <input
                     onChange={handleChange}
                 type='checkbox'/>
@@ -177,16 +155,12 @@ function App() {
                   соглашения
                 </a>
                 пользователя
-              </h5></Item>
-          </Grid>
-          <Grid item xs={4}/>
-          <Grid item xs={4}/>
-          <Grid item xs={4}>
-            <Item style={{width: 360}}><Button disabled={!formValid} type="submit">
+              </h5>
+          <Button disabled={!formValid} type="submit">
               <h4 style={{display: 'flex',width: 360}}>Регистрация</h4>
-            </Button></Item>
+            </Button>
+            </Item>
           </Grid>
-          <Grid item xs={4}/>
 
 
         </Grid>
